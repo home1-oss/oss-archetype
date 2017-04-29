@@ -1,6 +1,6 @@
 package ${package}.controller;
 
-import static com.yirendai.oss.lib.errorhandle.api.ApplicationExceptions.checkArgument;
+import static cn.home1.oss.lib.errorhandle.api.ApplicationExceptions.checkArgument;
 import static org.springframework.http.HttpStatus.ACCEPTED;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;

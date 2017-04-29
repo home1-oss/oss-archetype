@@ -4,9 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.BDDMockito.given;
 
+import cn.home1.oss.lib.test.RestTemplateForTest;
+import cn.home1.oss.lib.test.RestTemplateForTest14x;
 import ${package}.entity.Greeting;
-import com.yirendai.oss.lib.test.RestTemplateForTest;
-import com.yirendai.oss.lib.test.RestTemplateForTest14x;
 import ${package}.service.GreetingService;
 
 import lombok.extern.slf4j.Slf4j;

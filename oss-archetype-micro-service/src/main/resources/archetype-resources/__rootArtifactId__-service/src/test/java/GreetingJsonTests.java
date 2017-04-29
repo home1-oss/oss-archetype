@@ -2,9 +2,9 @@ package ${package};
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import cn.home1.oss.lib.common.Jackson2Utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ${package}.entity.Greeting;
-import com.yirendai.oss.lib.common.Jackson2Utils;
 
 import org.junit.Before;
 import org.junit.Test;

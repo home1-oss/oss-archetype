@@ -48,13 +48,13 @@
         #archetypeRepository="http://nexus.local:28081/nexus/content/groups/public"
         archetypeRepository="http://nexus2.internal/nexus/content/groups/public"
         
-        groupId="com.yirendai"
+        groupId="cn.home1"
         artifactId="micro"
-        package="com.yirendai"
+        package="cn.home1"
         version="0.0.1-SNAPSHOT"
         
         mvn archetype:generate \
-            -DarchetypeGroupId=com.yirendai.infra \
+            -DarchetypeGroupId=cn.home1 \
             -DarchetypeArtifactId=oss-archetype-micro-service \
             -DgroupId=${groupId} \
             -DartifactId=${artifactId} \
@@ -63,7 +63,7 @@
             -DarchetypeVersion=${archetypeVersion} \
             -DarchetypeRepository=${archetypeRepository}
 
-通过以上命令，生成 artifactId 为 micro，groupId 为 com.yirendai 的项目。
+通过以上命令，生成 artifactId 为 micro，groupId 为 cn.home1 的项目。
 
 ## 项目架构
 

@@ -262,15 +262,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-errorhandle-spring-boot-${spring-boot.version}</artifactId>
         </dependency>
         <!--dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-security-spring-boot-${spring-boot.version}</artifactId>
         </dependency-->
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-swagger-spring-boot-${spring-boot.version}</artifactId>
             <scope>runtime</scope>
         </dependency>
@@ -362,7 +362,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-lib-test-spring-boot-${spring-boot.version}</artifactId>
             <scope>test</scope>
         </dependency>

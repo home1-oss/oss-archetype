@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.yirendai.infra</groupId>
+        <groupId>cn.home1</groupId>
         <artifactId>oss-build</artifactId>
-        <version>1.0.8.OSS-SNAPSHOT</version>
+        <version>1.0.9.OSS</version>
     </parent>
 
     <groupId>${groupId}</groupId>
@@ -59,7 +59,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.yirendai.infra</groupId>
+                <groupId>cn.home1</groupId>
                 <artifactId>oss-release-spring-boot-${spring-boot.version}</artifactId>
                 <version>${oss-release.version}</version>
                 <type>pom</type>

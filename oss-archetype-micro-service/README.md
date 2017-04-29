@@ -45,13 +45,13 @@
         #ARCHETYPE_REPOSITORY="${INTERNAL_NEXUS}/content/groups/public"
         ARCHETYPE_REPOSITORY="${LOCAL_NEXUS}/repository/maven-public"
 
-        groupId="com.yirendai"
+        groupId="cn.home1"
         artifactId="micro"
-        package="com.yirendai"
+        package="cn.home1"
         version="0.0.1-SNAPSHOT"
 
         mvn archetype:generate \
-            -DarchetypeGroupId=com.yirendai.infra \
+            -DarchetypeGroupId=cn.home1 \
             -DarchetypeArtifactId=oss-archetype-micro-service \
             -DgroupId=${groupId} \
             -DartifactId=${artifactId} \
@@ -60,7 +60,7 @@
             -DarchetypeVersion=${ARCHETYPE_VERSION} \
             -DarchetypeRepository=${ARCHETYPE_REPOSITORY}
 
-通过以上命令，生成 artifactId 为 micro，groupId 为 com.yirendai 的项目。
+通过以上命令，生成 artifactId 为 micro，groupId 为 cn.home1 的项目。
 
 ## 项目架构
 

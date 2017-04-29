@@ -21,11 +21,11 @@
 
     groupId="configserver"
     artifactId="micro-service-config"
-    package="com.yirendai"
+    package="cn.home1"
     version="0.0.1-SNAPSHOT"
 
     mvn archetype:generate \
-        -DarchetypeGroupId=com.yirendai.infra \
+        -DarchetypeGroupId=cn.home1 \
         -DarchetypeArtifactId=oss-archetype-micro-service-config \
         -DgroupId=${groupId} \
         -DartifactId=${artifactId} \

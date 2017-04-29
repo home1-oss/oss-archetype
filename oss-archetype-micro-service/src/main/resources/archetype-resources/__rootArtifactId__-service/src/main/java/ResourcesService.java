@@ -2,7 +2,7 @@ package $package;
 
 import static java.util.stream.Collectors.toList;
 
-import com.yirendai.oss.boot.autoconfigure.AppProperties;
+import cn.home1.oss.boot.autoconfigure.AppProperties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

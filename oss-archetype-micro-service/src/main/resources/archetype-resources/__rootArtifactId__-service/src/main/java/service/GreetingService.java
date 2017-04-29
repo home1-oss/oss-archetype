@@ -1,7 +1,7 @@
 package ${package}.service;
 
-import static com.yirendai.oss.lib.errorhandle.api.ApplicationExceptions.check;
-import static com.yirendai.oss.lib.errorhandle.api.ApplicationExceptions.checkArgument;
+import static cn.home1.oss.lib.errorhandle.api.ApplicationExceptions.check;
+import static cn.home1.oss.lib.errorhandle.api.ApplicationExceptions.checkArgument;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 

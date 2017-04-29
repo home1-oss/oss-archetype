@@ -64,7 +64,7 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.yirendai.infra</groupId>
+                                    <groupId>cn.home1</groupId>
                                     <artifactId>oss-configlint</artifactId>
                                     <version>${oss-configlint.version}</version>
                                     <type>jar</type>

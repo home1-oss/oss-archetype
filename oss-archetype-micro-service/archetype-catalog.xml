@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0 http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd">
     <archetypes>
         <archetype>
-            <groupId>com.yirendai.infra</groupId>
+            <groupId>cn.home1</groupId>
             <artifactId>oss-archetype-micro-service</artifactId>
             <version>1.0.6.OSS-SNAPSHOT</version>
             <!--repository>http://nexus.local:28081/nexus/content/groups/public</repository-->
