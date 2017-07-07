@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.home1</groupId>
         <artifactId>oss-build</artifactId>
-        <version>1.0.9.OSS</version>
+        <version>1.0.11.OSS</version>
     </parent>
 
     <artifactId>oss-archetype</artifactId>

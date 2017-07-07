@@ -42,8 +42,8 @@
 开发人员可以通过 `mvn archetype:generate` 命令，基于oss archetype生成微服务架构的项目。如下所示：
 
         ARCHETYPE_VERSION="1.0.6.OSS-SNAPSHOT"
-        #ARCHETYPE_REPOSITORY="${INTERNAL_NEXUS}/content/groups/public"
-        ARCHETYPE_REPOSITORY="${LOCAL_NEXUS}/repository/maven-public"
+        #ARCHETYPE_REPOSITORY="${INTERNAL_NEXUS2}/nexus/content/groups/public"
+        ARCHETYPE_REPOSITORY="${LOCAL_NEXUS3}/nexus/repository/maven-public"
 
         groupId="cn.home1"
         artifactId="micro"

@@ -43,14 +43,8 @@
 
     <properties>
         <docker.registry>registry.docker.internal</docker.registry>
-        <nexus.local.repositories>http://nexus.local:28081/nexus/repository</nexus.local.repositories>
-        <local-mvnsite.prefix>scp://local-mvnsite:10022/usr/share/nginx/html</local-mvnsite.prefix>
-        <internal-nexus.repositories>http://nexus2.internal/nexus/content/repositories</internal-nexus.repositories>
-        <internal-mvnsite.prefix>scpexe://mvn-site.internal:22/opt/mvn-sites</internal-mvnsite.prefix>
-        <checkstyle.config.location>http://gitlab.internal/home1-oss/oss-build/raw/master/src/main/checkstyle/google_checks_6.19.xml</checkstyle.config.location>
-        <pmd.ruleset.location>http://gitlab.internal/home1-oss/oss-build/raw/master/src/main/pmd/pmd-ruleset-5.3.5.xml</pmd.ruleset.location>
-        <frontend.nodeDownloadRoot>https://npm.taobao.org/mirrors/node/</frontend.nodeDownloadRoot>
-        <frontend.npmDownloadRoot>http://registry.npm.taobao.org/npm/-/</frontend.npmDownloadRoot>
+        <local-nexus3.repository>http://nexus3.local:28081/nexus/repository</local-nexus3.repository>
+        <internal-nexus3.repository>http://nexus3.internal/nexus/repository</internal-nexus3.repository>
 
         <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
         <oss-release.version>1.0.6.OSS-SNAPSHOT</oss-release.version>

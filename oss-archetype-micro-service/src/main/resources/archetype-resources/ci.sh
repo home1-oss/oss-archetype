@@ -1,36 +1,19 @@
 #!/usr/bin/env bash
 
-### OSS CI CONTEXT VARIABLES BEGIN
-if [ -n "${CI_BUILD_REF_NAME}" ] && ([ "${CI_BUILD_REF_NAME}" == "master" ] || [ "${CI_BUILD_REF_NAME}" == "develop" ]); then BUILD_SCRIPT_REF="${CI_BUILD_REF_NAME}"; else BUILD_SCRIPT_REF="develop"; fi
-if [ -z "${GIT_SERVICE}" ]; then
-    if [ -n "${CI_PROJECT_URL}" ]; then INFRASTRUCTURE="internal"; GIT_SERVICE=$(echo "${CI_PROJECT_URL}" | sed 's,/*[^/]\+/*$,,' | sed 's,/*[^/]\+/*$,,'); else INFRASTRUCTURE="local"; GIT_SERVICE="${LOCAL_GIT_SERVICE}"; fi
-fi
-if [ -z "${GIT_REPO_OWNER}" ]; then
-    if [ -n "${TRAVIS_REPO_SLUG}" ]; then
-        GIT_REPO_OWNER=$(echo ${TRAVIS_REPO_SLUG} | awk -F/ '{print $1}');
-    else
-        if [ -z "${INTERNAL_GIT_SERVICE_USER}" ]; then GIT_REPO_OWNER="home1-oss"; else GIT_REPO_OWNER="${INTERNAL_GIT_SERVICE_USER}"; fi
-    fi
-fi
-### OSS CI CONTEXT VARIABLES END
+# decrypt some files before build
+#
+#
+#
 
 export BUILD_PUBLISH_DEPLOY_SEGREGATION="true"
-export BUILD_SITE="true"
+
 export BUILD_SITE_PATH_PREFIX="oss"
 
-
-export BUILD_TEST_FAILURE_IGNORE="false"
-export BUILD_TEST_SKIP="false"
 
 
 
 ### OSS CI CALL REMOTE CI SCRIPT BEGIN
-echo "eval \$(curl -s -L ${GIT_SERVICE}/${GIT_REPO_OWNER}/oss-build/raw/${BUILD_SCRIPT_REF}/src/main/ci-script/ci.sh)"
-eval "$(curl -s -L ${GIT_SERVICE}/${GIT_REPO_OWNER}/oss-build/raw/${BUILD_SCRIPT_REF}/src/main/ci-script/ci.sh)"
+if [ -z "${LIB_CI_SCRIPT}" ]; then LIB_CI_SCRIPT="https://github.com/home1-oss/oss-build/raw/develop/src/main/ci-script/lib_ci.sh"; fi
+echo "eval \$(curl -s -L ${LIB_CI_SCRIPT})"
+eval "$(curl -s -L ${LIB_CI_SCRIPT})"
 ### OSS CI CALL REMOTE CI SCRIPT END
-
-if [ "${1}" != "test_and_build" ] && ([ "${GIT_REPO_OWNER}" != "home1-oss" ] || [ "pull_request" == "${TRAVIS_EVENT_TYPE}" ]); then
-    echo "skip deploy/publish on forked repo or which trigger by pull request "
-else
-    $@
-fi

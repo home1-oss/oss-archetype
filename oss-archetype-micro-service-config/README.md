@@ -16,8 +16,8 @@
 开发人员需要通过`mvn archetype:generate`命令，基于本骨架项目创建新的配置管理项目。示例如下：
 
     ARCHETYPE_VERSION="1.0.6.OSS-SNAPSHOT"
-    #ARCHETYPE_REPOSITORY="${INTERNAL_NEXUS}/content/groups/public"
-    ARCHETYPE_REPOSITORY="${LOCAL_NEXUS}/repository/maven-public"
+    #ARCHETYPE_REPOSITORY="${INTERNAL_NEXUS2}/nexus/content/groups/public"
+    ARCHETYPE_REPOSITORY="${LOCAL_NEXUS3}/nexus/repository/maven-public"
 
     groupId="configserver"
     artifactId="micro-service-config"

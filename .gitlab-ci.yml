@@ -1,40 +1,53 @@
-stages:
-- test_and_build
-- deploy
-
-on_every_push:
-  stage: test_and_build
+analysis:
+  stage: analysis
   script:
-  - echo "on_every_push"
-  - bash ci.sh test_and_build
-  artifacts:
-    expire_in: 1 day
-    untracked: true
+  - bash ci.sh analysis
+
+before_script:
+- export BUILD_SITE=true
+#- export LIB_CI_SCRIPT=https://github.com/home1-oss/oss-build/raw/master/src/main/ci-script/lib_ci.sh
+- export LIB_CI_SCRIPT=http://gitlab.local:10080/home1-oss/oss-build/raw/master/src/main/ci-script/lib_ci.sh
+- export ORIGIN_REPO_SLUG=home1-oss/oss-archetype
 
 on_develop_push:
-  stage: deploy
-  script:
-  - echo "on_develop_push"
-  - bash ci.sh publish_snapshot
+  dependencies:
+  - on_non_release_push
   only:
   - develop
-  dependencies:
-  - on_every_push
-
-on_master_push:
-  stage: deploy
   script:
-  - echo "on_master_push"
-  - bash ci.sh publish_release
-  only:
-  - master
-  dependencies:
-  - on_every_push
+  - bash ci.sh publish_artifact publish_site
+  stage: publish
 
-on_release_tag:
-  stage: deploy
+#on_master_push:
+#  dependencies:
+#  - on_non_release_push
+#  only:
+#  - master
+#  script:
+#  - echo do nothing
+#  stage: publish
+
+on_non_release_push:
+#  artifacts:
+#    expire_in: 1 day
+#    untracked: true
+  except:
+  - /^release\/.+$/
   script:
-  - echo "on_release_tag"
-  - bash ci.sh publish_release_tag
+  - bash ci.sh clean test_and_build
+  stage: build
+
+on_release_push:
+#  artifacts:
+#    paths:
+#    - "**/target/*.jar"
   only:
-  - /^release.+$/
+  - /^release\/.+$/
+  script:
+  - bash ci.sh clean test_and_build publish_artifact publish_site
+  stage: publish
+
+stages:
+- analysis
+- build
+- publish

@@ -8,7 +8,7 @@
             <groupId>cn.home1</groupId>
             <artifactId>oss-archetype-micro-service-config</artifactId>
             <version>1.0.6.OSS-SNAPSHOT</version>
-            <!--repository>http://nexus.local:28081/nexus/content/groups/public</repository-->
+            <!--repository>http://nexus3.local:28081/nexus/content/groups/public</repository-->
             <description>Application Config repository Maven Archetype</description>
         </archetype>
     </archetypes>
