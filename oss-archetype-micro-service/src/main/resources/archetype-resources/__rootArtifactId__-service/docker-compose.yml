@@ -1,8 +1,8 @@
 
 #set( $dockerRegistry = '${DOCKER_REGISTRY:-registry.docker.local}' )
 #set( $dockerImageTag = '${VERSION:-latest}' )
-#set( $eurekaClientServiceurlDefaultzone = '${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@local-eureka:8761/eureka/}' )
-#set( $eurekaInstanceHostnamePrefix = '${EUREKA_INSTANCE_HOSTNAME:-local-' )
+#set( $eurekaClientServiceurlDefaultzone = '${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@eureka.local:8761/eureka/}' )
+#set( $eurekaInstanceHostnamePrefix = '${EUREKA_INSTANCE_HOSTNAME:-' )
 #set( $eurekaInstanceNonsecureport = '${EUREKA_INSTANCE_NONSECUREPORT:-8080}' )
 #set( $serverPort = '${SERVER_PORT:-8080}' )
 #set( $springProfilesActive = '${ENV:-development}.env' )
@@ -13,21 +13,21 @@ services:
     image: $dockerRegistry/${artifactId}:$dockerImageTag
     restart: always
     command: []
-    container_name: $eurekaInstanceHostnamePrefix${artifactId}}
-    hostname: $eurekaInstanceHostnamePrefix${artifactId}}
+    container_name: $eurekaInstanceHostnamePrefix${artifactId}.local}
+    hostname: $eurekaInstanceHostnamePrefix${artifactId}.local}
     ports:
     - "$eurekaInstanceNonsecureport:$serverPort"
     environment:
     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=$eurekaClientServiceurlDefaultzone
-    - EUREKA_INSTANCE_HOSTNAME=$eurekaInstanceHostnamePrefix${artifactId}}
+    - EUREKA_INSTANCE_HOSTNAME=$eurekaInstanceHostnamePrefix${artifactId}.local}
     - SERVER_PORT=$serverPort
     - SPRING_PROFILES_ACTIVE=$springProfilesActive
     volumes:
     - ${artifactId}-volume:/root/data
     - ${artifactId}-volume:/tmp
     external_links:
-    - local-eureka:local-eureka
-    - local-configserver:local-configserver
+    - eureka.local:eureka.local
+    - configserver.local:configserver.local
 
 volumes:
   ${artifactId}-volume: {}
