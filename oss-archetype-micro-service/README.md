@@ -326,9 +326,9 @@ client 项目作为 service 项目的 sdk，必须由服务提供方的开发者
 
 ## 生成文档及项目报告
 
-ci执行测试构建和生产构建时，会自动为项目生成maven site网站内容并发布到 mvn-site.internal 网站。
+ci执行测试构建和生产构建时，会自动为项目生成maven site网站内容并发布到 mvnsite.internal 网站。
 
-关于接入 oss-build 的项目构建 maven site 以及具体生成的网站内容，请参照[这篇文档](http://mvn-site.internal/oss-develop/gitbook/docs/oss/MVNSITE.html)。
+关于接入 oss-build 的项目构建 maven site 以及具体生成的网站内容，请参照[这篇文档](http://mvnsite.internal/oss-develop/gitbook/docs/oss/MVNSITE.html)。
 
 ## 构建、发布和部署方案
 
