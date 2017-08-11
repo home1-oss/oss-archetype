@@ -13,7 +13,7 @@
 <Configuration status="WARN">
     <Properties>
         <Property name="defaultLoggingFile">${artifactId}</Property>
-        <Property name="defaultLoggingPath">$userHome/data/${artifactId}/logs</Property>
+        <Property name="defaultLoggingPath">$userHome/.oss/${artifactId}/logs</Property>
         <!-- https://issues.apache.org/jira/browse/LOG4J2-1589 -->
         <!-- http://logback.qos.ch/manual/configuration.html#nestedSubst -->
         <Property name="loggingFileFromEnv">$loggingFileFromEnv</Property>
