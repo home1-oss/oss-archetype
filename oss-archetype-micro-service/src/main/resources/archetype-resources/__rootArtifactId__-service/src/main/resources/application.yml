@@ -5,7 +5,7 @@
 #set( $loggingLevelDot = '${LOGGING_LEVEL_:INFO}' )
 # TODO use ${artifactId} in LOGGING_FILE default value
 #set( $loggingFile = '${LOGGING_FILE:${spring.application.name}}.log' )
-#set( $loggingPath = '${LOGGING_PATH:${user.home}/data/${spring.application.name}/logs}' )
+#set( $loggingPath = '${LOGGING_PATH:${user.home}/.oss/${spring.application.name}/logs}' )
 #set( $securityUserName = '${SECURITY_USER_NAME:admin}' )
 #set( $securityUserPassword = '${SECURITY_USER_PASSWORD:admin_pass}' )
 #set( $serverPortWithDefault = '${SERVER_PORT:8080}' )
@@ -37,7 +37,7 @@ spring.datasource:
   validation-query: 'SELECT 1'
   type: 'com.zaxxer.hikari.HikariDataSource'
   driver-class-name: 'org.h2.Driver'
-  url: 'jdbc:h2:~/data/${artifactId}/h2' #'jdbc:h2:mem:${artifactId}'
+  url: 'jdbc:h2:~/.oss/${artifactId}/h2' #'jdbc:h2:mem:${artifactId}'
   username: sa
 
 spring.h2.console:
