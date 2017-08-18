@@ -44,7 +44,7 @@
     <properties>
         <docker.registry>registry.docker.internal</docker.registry>
         <local-nexus3.repository>http://nexus3.local:28081/nexus/repository</local-nexus3.repository>
-        <internal-nexus3.repository>http://nexus3.internal/nexus/repository</internal-nexus3.repository>
+        <internal-nexus3.repository>http://nexus3.internal:28081/nexus/repository</internal-nexus3.repository>
 
         <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
         <oss-release.version>1.0.6.OSS-SNAPSHOT</oss-release.version>
