@@ -2,8 +2,8 @@
 # ${artifactId}'s spring-cloud bootstrap
 
 #set( $whySetVelocityVariablesLikeThis = 'see: http://stackoverflow.com/questions/31201338/maven-archetype-velocity-error-because-of-a-colon')
-#set( $eurekaClientServiceUrlDefaultZone = '${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://user:user_pass@eureka.local:8761/eureka/}' )
-#set( $springCloudConfigDiscoveryServiceId = '${SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID:configserver.local}' )
+#set( $eurekaClientServiceUrlDefaultZone = '${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://user:user_pass@oss-eureka.local:8761/eureka/}' )
+#set( $springCloudConfigDiscoveryServiceId = '${SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID:oss-configserver.local}' )
 #set( $springCloudConfigLabel = '${SPRING_CLOUD_CONFIG_LABEL:develop}' )
 #set( $springCloudConfigProfile = '${spring.profiles.active:${ENV:development}.env}' )
 #set( $springCloudConfigUsername = '${CONFIG_SERVER_USERNAME:user}' )

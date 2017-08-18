@@ -1,7 +1,7 @@
 
 #set( $dockerRegistry = '${DOCKER_REGISTRY:-registry.docker.local}' )
 #set( $dockerImageTag = '${VERSION:-latest}' )
-#set( $eurekaClientServiceurlDefaultzone = '${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@eureka.local:8761/eureka/}' )
+#set( $eurekaClientServiceurlDefaultzone = '${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@oss-eureka.local:8761/eureka/}' )
 #set( $eurekaInstanceHostnamePrefix = '${EUREKA_INSTANCE_HOSTNAME:-' )
 #set( $eurekaInstanceNonsecureport = '${EUREKA_INSTANCE_NONSECUREPORT:-8080}' )
 #set( $serverPort = '${SERVER_PORT:-8080}' )
@@ -26,8 +26,8 @@ services:
     - ${artifactId}-volume:/root/data
     - ${artifactId}-volume:/tmp
     external_links:
-    - eureka.local:eureka.local
-    - configserver.local:configserver.local
+    - oss-eureka.local:oss-eureka.local
+    - oss-configserver.local:oss-configserver.local
 
 volumes:
   ${artifactId}-volume: {}
